@@ -24,13 +24,13 @@ func ConnectDB() {
 		Logger: logger.Default.LogMode(logger.Info),
 	})
 	if err != nil {
-		//	fmt.Errorf("Failed to connect to database: %w ", err)
-		///	os.Exit(2)
-		log.Fatal(err)
+		fmt.Println("Failed to connect to database: %w ", err)
+		os.Exit(2)
+		//log.Fatal(err)
 	}
 
-	log.Println("connected")
-	db.Logger = logger.Default.LogMode(logger.Info)
+	log.Println("database connected")
+	//db.Logger = logger.Default.LogMode(logger.Info)
 
 	log.Println("running migrations")
 	db.AutoMigrate(&models.Fact{})
