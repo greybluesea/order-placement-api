@@ -1,2 +1,5 @@
 /tmp
 .env
+/backup-images
+*.pem
+*.p7b

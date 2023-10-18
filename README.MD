@@ -1,4 +1,4 @@
-## Dockerised Fullstack WebApp(GoFiber + GORM + Postgres) - learned from Div Rhino
+## OrderProcessing API(GoFiber + GORM + Postgres) - learned from rithmic and Div Rhino
 
-Youtube: [https://youtu.be/hTA3JdUF-xc](https://youtu.be/hTA3JdUF-xc)
-![screenshot](/thumbnail.png)
+Youtube: [https://...](https://...)
+![screenshot](/...)
