@@ -13,7 +13,9 @@ func main() {
 
 	app := fiber.New(fiber.Config{})
 	app.Get("/", homeHandler)
-	routes.SetupCustomerRoutes(app)
+	routes.SetupCustomersRoutes(app)
+	routes.SetupProductsRoutes(app)
+	routes.SetupOrdersRoutes(app)
 
 	app.Static("/", "./public")
 	log.Fatal(app.Listen(":3000"))

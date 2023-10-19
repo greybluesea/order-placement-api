@@ -7,7 +7,7 @@ import (
 	//"github.com/google/uuid"
 )
 
-func SetupCustomerRoutes(app *fiber.App) {
+func SetupCustomersRoutes(app *fiber.App) {
 
 	app.Get("/customers", getAllCustomers)
 	app.Post("/customers/new", createCustomer)
@@ -19,6 +19,10 @@ func SetupCustomerRoutes(app *fiber.App) {
 func getAllCustomers(c *fiber.Ctx) error {
 	customers := []models.Customer{}
 	database.DB.Find(&customers)
+
+	if len(customers) == 0 {
+		return c.Status(200).JSON("No customer in database yet.")
+	}
 
 	return c.Status(200).JSON(customers)
 }
@@ -76,7 +80,7 @@ func updateCustomerByID(c *fiber.Ctx) error {
 	return c.Status(200).JSON(customer)
 }
 
-type Response struct {
+type DeleteCustomerResponse struct {
 	Message  string          `json:"message"`
 	Customer models.Customer `json:"customer"`
 }
@@ -96,7 +100,7 @@ func deleteCustomerByID(c *fiber.Ctx) error {
 	if err = database.DB.Delete(&customer).Error; err != nil {
 		return c.Status(404).JSON(err.Error())
 	}
-	response := Response{
+	response := DeleteCustomerResponse{
 		Message:  "Successfully deleted customer: ",
 		Customer: customer,
 	}
