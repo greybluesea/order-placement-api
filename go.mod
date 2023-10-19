@@ -1,9 +1,10 @@
-module github.com/greybluesea/order-placement-api-gofiber-gorm-postgres
+module github.com/greybluesea/order-placement-api
 
 go 1.21.3
 
 require (
 	github.com/gofiber/fiber/v2 v2.49.2
+	github.com/joho/godotenv v1.5.1
 	gorm.io/driver/postgres v1.5.3
 	gorm.io/gorm v1.25.5
 )

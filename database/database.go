@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/greybluesea/order-placement-api-gofiber-gorm-postgres/models"
+	"github.com/greybluesea/order-placement-api/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -18,6 +18,7 @@ type DBInstance struct {
 var DB DBInstance
 
 func ConnectDB() {
+
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=5432 sslmode=verify-full sslrootcert=%s TimeZone=Pacific/Auckland", os.Getenv("DB_ENDPOINT"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_NAME"), os.Getenv("SSL_ROOT_CERT"))
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{

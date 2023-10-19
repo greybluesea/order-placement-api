@@ -4,11 +4,16 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/greybluesea/order-placement-api-gofiber-gorm-postgres/database"
-	"github.com/greybluesea/order-placement-api-gofiber-gorm-postgres/routes"
+	"github.com/greybluesea/order-placement-api/database"
+	"github.com/greybluesea/order-placement-api/routes"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 	database.ConnectDB()
 
 	app := fiber.New(fiber.Config{})

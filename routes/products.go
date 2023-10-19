@@ -2,8 +2,8 @@ package routes
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/greybluesea/order-placement-api-gofiber-gorm-postgres/database"
-	"github.com/greybluesea/order-placement-api-gofiber-gorm-postgres/models"
+	"github.com/greybluesea/order-placement-api/database"
+	"github.com/greybluesea/order-placement-api/models"
 )
 
 func SetupProductsRoutes(app *fiber.App) {
