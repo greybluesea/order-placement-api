@@ -1,4 +1,4 @@
-module github.com/greybluesea/order-processing-api-gofiber-gorm-postgres
+module github.com/greybluesea/order-placement-api-gofiber-gorm-postgres
 
 go 1.21.3
 

@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/greybluesea/order-processing-api-gofiber-gorm-postgres/models"
+	"github.com/greybluesea/order-placement-api-gofiber-gorm-postgres/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -26,14 +26,13 @@ func ConnectDB() {
 	if err != nil {
 		fmt.Errorf("Failed to connect to database. ", err, "\n")
 		os.Exit(2)
-		//log.Fatal(err)
+		//log.Fatal("Failed to connect to database.", err.Error())
 	}
-
 	log.Println("database connected")
 	//db.Logger = logger.Default.LogMode(logger.Info)
 
 	log.Println("running migrations")
-	db.AutoMigrate(&models.Fact{})
+	db.AutoMigrate(&models.Customer{}, &models.Product{}, &models.Order{})
 
 	DB = DBInstance{
 		db,
