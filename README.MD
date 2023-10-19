@@ -1,4 +1,4 @@
-## OrderProcessing API(GoFiber + GORM + Postgres) - learned from rithmic and Div Rhino
+## Order Placement API(GoFiber + GORM + Postgres)
 
 Youtube: [https://...](https://...)
 ![screenshot](/...)
