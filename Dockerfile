@@ -25,7 +25,7 @@ FROM alpine:latest
 WORKDIR /app
 
 # Copy the binary from the builder stage to the final image
-COPY . .
+COPY ./great .
 COPY --from=builder /usr/src/app/cmd/order-placement-api .
 
 # You may need to add additional dependencies or configurations here
